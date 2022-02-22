@@ -11,6 +11,7 @@ export default function Home() {
         />
       </Head>
       <h1>home page</h1>
+      <h2>under construction...</h2>
     </div>
   );
 }
