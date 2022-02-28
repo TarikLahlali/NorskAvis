@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+
 import SubMenu from "./SubMenu";
 import dropDownStyles from "../styles/DropDown.module.css";
 
@@ -18,11 +20,15 @@ const DropDown: React.FC<{ isClicked: boolean }> = ({ isClicked }) => {
         <div className="hidden  w-1/3 bg-customGray lg:flex">
           <ul className="mx-auto">
             <button className="bg-white my-10 w-60 h-12 font-extralight">
-              <a href="/signIn">Logg inn</a>
+              <Link href="/signIn">
+                <a>Logg inn</a>
+              </Link>
             </button>
             <ul>
               <li>
-                <a href="/signUp">Bli abonnent</a>
+                <Link href="/signUp">
+                  <a>Bli abonnent</a>
+                </Link>
               </li>
             </ul>
             <ul>
