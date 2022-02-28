@@ -10,8 +10,10 @@ export default function Home() {
           content="Nyheter Norge nyttavis norway news newspaper"
         />
       </Head>
-      <h1>home page</h1>
-      <h2>under construction...</h2>
+      <div className="flex flex-col items-center justify-center h-96 ">
+        <h1>home page</h1>
+        <h2>under construction...</h2>
+      </div>
     </div>
   );
 }

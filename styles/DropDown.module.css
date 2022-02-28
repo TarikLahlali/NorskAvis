@@ -3,42 +3,11 @@
   height: 0px;
   transition: height 0.3s ease-out;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   background-color: white;
 }
 
-.wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-}
 .active {
   height: 500px;
   border-bottom: 1px solid #d6dce5;
-}
-
-.menuGroup {
-  flex: 2;
-  height: 500px;
-}
-.menuInfo {
-  flex: 1;
-  background-color: #eff2f6;
-  height: 500px;
-}
-
-.logginWrapper {
-  margin: 0 auto;
-  width: 240px;
-}
-
-.logginButton {
-  background-color: #fff;
-  border: 0;
-  margin: 35px 0;
-  text-align: center;
-  width: 240px;
-  height: 49px;
-  cursor: pointer;
-  font-weight: 300;
 }

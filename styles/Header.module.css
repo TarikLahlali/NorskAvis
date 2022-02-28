@@ -1,0 +1,61 @@
+.container {
+  border-bottom: 1px solid #d6dce5;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.flipMenu {
+  height: 40px;
+  width: 50px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.25s ease-in-out;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+}
+.flipMenu .menuFront,
+.flipMenu .menuBack {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flipMenu .menuBack {
+  transform: rotateX(180deg);
+}
+
+.flip {
+  transform: rotateX(180deg);
+}
+
+.burgerMenu {
+  margin: 0 4px;
+}
+
+.burgerMenu span {
+  display: block;
+  height: 3px;
+  width: 20px;
+  background: black;
+  margin: 3px auto;
+  opacity: 1;
+  transition: 0.25s ease-in-out;
+}
+
+.burgerMenu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerMenu.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.burgerMenu.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
