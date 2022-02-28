@@ -6,6 +6,8 @@ import UseOnClickOutside from "../hooks/useClickOutside";
 import headerStyles from "../styles/Header.module.css";
 import logo from "../public/logoNorskAvis.png";
 import DropDown from "./DropDown";
+import MobileDropDown from "./MobileDropDown";
+import { data } from "./dataLinks.js";
 
 const Header = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -21,10 +23,12 @@ const Header = () => {
     <div ref={squareBoxRef}>
       <div className="border-b border-b-gray">
         <header className="flex max-w-5xl items-center justify-between px-4 font-thin md:m-auto">
-          <div className="flex h-20 items-center space-x-5">
-            <Link href="/" passHref>
-              <Image src={logo} alt="logo" className="cursor-pointer" />
-            </Link>
+          <div className="flex h-14 sm:h-20 items-center space-x-5 ">
+            <div className="cursor-pointer w-28 md:w-32  object-contain ">
+              <Link href="/" passHref>
+                <Image src={logo} alt="logo" />
+              </Link>
+            </div>
             <nav
               role="navigation"
               className=" transitionMargin hidden h-20  overflow-hidden   md:inline-block"
@@ -82,7 +86,7 @@ const Header = () => {
           </div>
           <div className="flex items-center justify-between space-x-5">
             <Link href="/signUp">
-              <a className=" rounded-xl bg-customBlue px-5 py-1 text-white">
+              <a className=" rounded-xl bg-customBlue text-sm px-4 md:text-base w-28 md:w-32 md:px-5 py-1 text-white">
                 Bli abonnent
               </a>
             </Link>
@@ -106,6 +110,15 @@ const Header = () => {
         </header>
       </div>
       <DropDown isClicked={isClicked} />
+
+      {isClicked &&
+        data.map((link) => {
+          const { id, url, title, links } = link;
+
+          return (
+            <MobileDropDown key={id} href={url} title={title} links={links} />
+          );
+        })}
     </div>
   );
 };

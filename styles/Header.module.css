@@ -29,7 +29,11 @@
 .flipMenu .menuBack {
   transform: rotateX(180deg);
 }
-
+@media screen and (max-width: 1000px) {
+  .flipMenu {
+    display: none;
+  }
+}
 .flip {
   transform: rotateX(180deg);
 }

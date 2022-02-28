@@ -11,3 +11,8 @@
   height: 500px;
   border-bottom: 1px solid #d6dce5;
 }
+@media (max-width: 1024px) {
+  .container {
+    display: none;
+  }
+}
