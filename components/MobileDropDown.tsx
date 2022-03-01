@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import styles from "../styles/MobileDropDown.module.css";
 
 const MobileDropDown = ({ key, title, href, links }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="lg:hidden mt-4 mx-1">
+    <div className="lg:hidden  mt-4 mx-1 ">
       <div
         className={`flex p-4 items-center justify-between  ${
           isOpen ? " bg-customGray " : ""
@@ -19,7 +18,9 @@ const MobileDropDown = ({ key, title, href, links }) => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={`h-6 w-6 cursor-pointer ${isOpen ? "" : "rotate-180"}`}
+            className={`h-6 w-6 cursor-pointer transition duration-150 ease-in-out ${
+              isOpen ? "" : "rotate-180"
+            }`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

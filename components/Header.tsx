@@ -20,10 +20,10 @@ const Header = () => {
   UseOnClickOutside(squareBoxRef, clickOutsidehandler);
 
   return (
-    <div ref={squareBoxRef}>
-      <div className="border-b border-b-gray">
-        <header className="flex max-w-5xl items-center justify-between px-4 font-thin md:m-auto">
-          <div className="flex h-14 sm:h-20 items-center space-x-5 ">
+    <div ref={squareBoxRef} className="fixed bg-white w-full z-10">
+      <div className="border-b border-b-gray   ">
+        <header className="flex max-w-5xl items-center justify-between px-4 font-thin md:m-auto ">
+          <div className="flex h-14 sm:h-20 items-center  space-x-5 ">
             <div className="cursor-pointer w-28 md:w-32  object-contain ">
               <Link href="/" passHref>
                 <Image src={logo} alt="logo" />
@@ -110,15 +110,16 @@ const Header = () => {
         </header>
       </div>
       <DropDown isClicked={isClicked} />
+      <div className="absolute w-full  sm:mt-24 bg-white z-10">
+        {isClicked &&
+          data.map((link) => {
+            const { id, url, title, links } = link;
 
-      {isClicked &&
-        data.map((link) => {
-          const { id, url, title, links } = link;
-
-          return (
-            <MobileDropDown key={id} href={url} title={title} links={links} />
-          );
-        })}
+            return (
+              <MobileDropDown key={id} href={url} title={title} links={links} />
+            );
+          })}
+      </div>
     </div>
   );
 };

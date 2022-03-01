@@ -13,8 +13,7 @@ const DropDown: React.FC<{ isClicked: boolean }> = ({ isClicked }) => {
           : dropDownStyles.container
       }
     >
-      {/* <div className="hidden m-auto lg:flex h-full max-w-5xl px-4"> */}
-      <div className=" m-auto flex h-full max-w-5xl px-4">
+      <div className=" hidden m-auto md:flex h-full max-w-5xl px-4">
         <div className="mr-8 w-2/3">
           <SubMenu />
         </div>
